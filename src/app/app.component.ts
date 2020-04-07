@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'assignment2';
+
+  changeTitle() {
+    this.title = this.title === 'assignment2' ? 'newAssignment' : 'assignment2';
+  }
 }

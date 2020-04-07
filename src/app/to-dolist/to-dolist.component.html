@@ -1,0 +1,15 @@
+<div class = "toDoList">
+  <p>To Do List Tool</p>
+  <div class ="addBar">
+    <input [(ngModel)]="inputEvent" type = 'text'> <button (click)="addEvent()">Add</button>
+  </div>
+  <hr>
+  <div class="searchBar">
+    <input [(ngModel)]="searchEvent" type = 'text'><img src="assets/images/search.png">
+  </div>
+  <ul>
+    <li  *ngFor="let item of toDoList | searchPipe: searchEvent let key = index" (click)="deleteEvent(key)">{{key + 1}}.{{item}}</li>
+  </ul>
+</div>
+
+

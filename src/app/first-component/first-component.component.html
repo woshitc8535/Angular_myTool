@@ -1,0 +1,9 @@
+<div *ngIf="showOrHide">Some text to be show1, this is *ngif</div>
+
+<div *ngIf="!showOrHide">Some text to be hide1, this is *ngif</div>
+
+<div *appMyDirective="showOrHide">Some text to be show2, this is MyDirective</div>
+
+<div *appMyDirective="!showOrHide">Some text to be hide2, this is MyDirective</div>
+
+<button (click)="changeCondition()">change condition</button>
