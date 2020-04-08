@@ -59,5 +59,4 @@ export class SecondComponentComponent implements OnInit, OnChanges, DoCheck, Aft
   public changeMessage() {
     this.message =  this.message === 'Message has been changed' ? 'HelloWord' : 'Message has been changed';
   }
-
 }

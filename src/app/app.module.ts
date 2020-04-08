@@ -9,6 +9,7 @@ import { ToDOListComponent } from './to-dolist/to-dolist.component';
 import {FormsModule} from '@angular/forms';
 import { SearchPipePipe } from './search-pipe.pipe';
 
+import {StorageService} from './services/storage.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { SearchPipePipe } from './search-pipe.pipe';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

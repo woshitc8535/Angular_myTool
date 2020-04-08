@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StorageService} from '../services/storage.service';
 
 @Component({
   selector: 'app-to-dolist',
@@ -10,9 +11,15 @@ export class ToDOListComponent implements OnInit {
   public toDoList: any[] = [];
   public searchEvent: string;
 
-  constructor() { }
+  constructor(public storage: StorageService) {
+
+  }
 
   ngOnInit(): void {
+    const searchList = this.storage.get('searchList');
+    if (searchList) {
+      this.toDoList = searchList;
+    }
   }
 
   addEvent() {
@@ -20,11 +27,13 @@ export class ToDOListComponent implements OnInit {
     // tslint:disable-next-line:triple-equals
     if (this.toDoList.indexOf(this.inputEvent) == -1) {
       this.toDoList.push(this.inputEvent);
+      this.storage.set('searchList', this.toDoList);
     }
     this.inputEvent = '';
   }
 
   deleteEvent(key) {
     this.toDoList.splice(key, 1);
+    this.storage.set('searchList', this.toDoList);
   }
 }
