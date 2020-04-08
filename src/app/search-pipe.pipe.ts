@@ -11,7 +11,7 @@ export class SearchPipePipe implements PipeTransform {
     }
     searchEvent = searchEvent.toLowerCase();
     return toDoList.filter(it => {
-      return it.toLowerCase().includes(searchEvent);
+      return it.toLowerCase().startsWith(searchEvent);
     });
   }
 
